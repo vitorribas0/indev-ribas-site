@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +13,6 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
-            font-size: 16px;
         }
 
         nav {
@@ -29,7 +29,7 @@
             color: #ffffff;
             margin: 0 15px;
             text-decoration: none;
-            font-size: 1.2rem;
+            font-size: 1.2em;
             transition: color 0.3s ease;
         }
 
@@ -38,13 +38,14 @@
         }
 
         section {
-            min-height: 100vh;
+            min-height: 100vh; /* Garante que cada seção tenha pelo menos a altura da janela */
             display: flex;
             justify-content: center;
             align-items: center;
             transition: background-color 1s ease;
             color: #ffffff;
             padding: 20px;
+            box-sizing: border-box; /* Inclui padding no cálculo da largura e altura */
         }
 
         .section-white {
@@ -59,18 +60,20 @@
 
         .content {
             text-align: center;
-            max-width: 90%;
+            max-width: 800px;
             margin: 0 auto;
+            padding: 20px; /* Adiciona padding interno para evitar que o conteúdo encoste nas bordas */
+            box-sizing: border-box;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 3em;
             margin-bottom: 20px;
             color: #1e90ff;
         }
 
         p {
-            font-size: 1.2rem;
+            font-size: 1.5em;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -81,7 +84,7 @@
         }
 
         li {
-            font-size: 1.3rem;
+            font-size: 1.3em;
             line-height: 1.6;
             margin-bottom: 20px;
             padding: 15px;
@@ -101,6 +104,7 @@
             color: #ffffff;
             padding: 20px;
             background-color: #000000;
+            margin-top: 40px; /* Adiciona espaço entre a última seção e o rodapé */
         }
 
         .automation-grid {
@@ -120,12 +124,12 @@
             text-decoration: none;
             overflow: hidden;
         }
-        
+
         .automation-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-        
+
         .automation-link {
             display: block;
             color: inherit;
@@ -135,18 +139,18 @@
             padding: 20px;
             box-sizing: border-box;
         }
-        
+
         .automation-link h2,
         .automation-link p {
             margin: 0;
         }
-        
+
         .automation-link h2 {
             color: #1e90ff;
         }
-        
+
         .automation-link p {
-            font-size: 1.1rem;
+            font-size: 1.1em;
             line-height: 1.6;
         }
 
@@ -158,7 +162,7 @@
         }
 
         .whatsapp-icon img {
-            width: 60px;
+            width: 80px;
             height: auto;
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -168,39 +172,9 @@
         .whatsapp-icon:hover img {
             transform: scale(1.1);
         }
-
-        /* Media Queries para responsividade */
-        @media (max-width: 768px) {
-            nav a {
-                font-size: 1rem;
-                margin: 0 10px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            p {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-
-            .automation-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .whatsapp-icon img {
-                width: 50px;
-            }
-        }
     </style>
 </head>
+
 <body>
 
     <nav>
@@ -215,14 +189,19 @@
         <div class="content">
             <img src="logo.png" alt="Logo da InDev" width="150">
             <h1>Bem-vindo à InDev</h1>
-            <p>Na InDev, acreditamos que a automação é a chave para o futuro. Transformamos processos manuais em soluções automatizadas que não apenas economizam tempo, mas também melhoram a precisão e a eficiência, permitindo que seu negócio foque no que realmente importa.</p>
+            <p>Na InDev, acreditamos que a automação é a chave para o futuro. Transformamos processos manuais em soluções
+                automatizadas que não apenas economizam tempo, mas também melhoram a precisão e a eficiência, permitindo que seu
+                negócio foque no que realmente importa.</p>
         </div>
     </section>
 
     <section id="solucoes" class="section-white">
         <div class="content">
             <h1>Nossas Soluções</h1>
-            <p>Nossas soluções de automação abrangem desde tarefas simples até processos complexos. Combinando tecnologia avançada com experiência em diversas indústrias, entregamos resultados que revolucionam a maneira como você trabalha. Seja através de robôs de software, integração de sistemas ou inteligência artificial, a InDev está preparada para levar seu negócio ao próximo nível.</p>
+            <p>Nossas soluções de automação abrangem desde tarefas simples até processos complexos. Combinando tecnologia avançada
+                com experiência em diversas indústrias, entregamos resultados que revolucionam a maneira como você trabalha. Seja
+                através de robôs de software, integração de sistemas ou inteligência artificial, a InDev está preparada para levar
+                seu negócio ao próximo nível.</p>
         </div>
     </section>
 
@@ -232,21 +211,28 @@
             <div class="automation-grid">
                 <div class="automation-item">
                     <h2>Automação de Lançamento</h2>
-                    <p>Automatizamos o processo de lançamento de dados, reduzindo erros e aumentando a eficiência. Seja para lançamentos financeiros, registros de vendas ou qualquer outro tipo de entrada de dados, garantimos que o processo seja rápido e preciso.</p>
+                    <p>Automatizamos o processo de lançamento de dados, reduzindo erros e aumentando a eficiência. Seja para
+                        lançamentos financeiros, registros de vendas ou qualquer outro tipo de entrada de dados, garantimos que o
+                        processo seja rápido e preciso.</p>
                 </div>
                 <div class="automation-item">
                     <a href="automacao-antecedentes.html" class="automation-link">
                         <h2>Automação de Consulta de Antecedentes Criminais</h2>
-                        <p>Facilitamos a consulta e a análise de antecedentes criminais de forma automatizada. Nossa solução integra com bases de dados relevantes e realiza consultas de forma ágil, proporcionando uma análise detalhada e confiável.</p>
+                        <p>Facilitamos a consulta e a análise de antecedentes criminais de forma automatizada. Nossa solução integra
+                            com bases de dados relevantes e realiza consultas de forma ágil, proporcionando uma análise detalhada e
+                            confiável.</p>
                     </a>
-                </div>               
+                </div>
                 <div class="automation-item">
                     <h2>Automação de Processos Operacionais</h2>
-                    <p>Transformamos processos operacionais manuais em fluxos de trabalho automatizados. Desde a coordenação de tarefas até a gestão de recursos, nossas soluções garantem um funcionamento mais fluido e sem interrupções.</p>
+                    <p>Transformamos processos operacionais manuais em fluxos de trabalho automatizados. Desde a coordenação de
+                        tarefas até a gestão de recursos, nossas soluções garantem um funcionamento mais fluido e sem interrupções.
+                    </p>
                 </div>
                 <div class="automation-item">
                     <h2>Automação de Relatórios e Análises</h2>
-                    <p>Automatizamos a geração de relatórios e análises, fornecendo insights valiosos sem o trabalho manual. Nossas soluções incluem dashboards personalizados e relatórios periódicos que ajudam na tomada de decisões.</p>
+                    <p>Automatizamos a geração de relatórios e análises, fornecendo insights valiosos sem o trabalho manual. Nossas
+                        soluções incluem dashboards personalizados e relatórios periódicos que ajudam na tomada de decisões.</p>
                 </div>
             </div>
         </div>
@@ -254,28 +240,34 @@
 
     <section id="contato" class="section-white">
         <div class="content">
-            <h1>Contato</h1>
-            <p>Entre em contato conosco para saber mais sobre nossas soluções de automação. Estamos prontos para transformar seus desafios em oportunidades.</p>
-            <p>Telefone: (11) 99999-9999</p>
-            <p>Email: contato@indev.com.br</p>
+            <h1>Entre em Contato</h1>
+            <p>Entre em contato conosco para descobrir como nossas soluções podem transformar sua operação. Estamos aqui para entender suas
+                necessidades e oferecer um plano de automação personalizado. Não hesite em nos contatar para mais informações.</p>
+            <p>Email: indev.ribas@gmail.com</p>
+            <p>Telefone: (11) 97789-9166</p>
         </div>
     </section>
 
     <section id="sobre" class="section-black">
         <div class="content">
             <h1>Sobre a InDev</h1>
-            <p>A InDev é uma empresa especializada em automação de processos manuais. Com anos de experiência no mercado, nosso objetivo é fornecer soluções tecnológicas que façam a diferença no dia a dia das empresas. Nosso time de especialistas está comprometido em entregar soluções que não apenas atendam, mas superem as expectativas dos nossos clientes.</p>
+            <p>A InDev é uma empresa líder em automação de processos manuais. Nossa missão é ajudar empresas a se adaptarem à nova era
+                digital, eliminando tarefas repetitivas e propensas a erros. Com uma equipe altamente qualificada e soluções inovadoras,
+                estamos comprometidos em entregar excelência e criar valor sustentável para nossos clientes.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 InDev Automação. Todos os direitos reservados.</p>
+        <p>&copy; 2024 InDev. Todos os direitos reservados.</p>
     </footer>
 
     <div class="whatsapp-icon">
-        <a href="https://wa.me/5511999999999" target="_blank">
-            <img src="whatsapp-icon.png" alt="Ícone do WhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=5511977899166&text=Ol%C3%A1%2C%20eu%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20automacao"
+            target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
         </a>
     </div>
+
 </body>
+
 </html>
