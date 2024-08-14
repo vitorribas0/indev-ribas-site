@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             overflow-x: hidden;
+            font-size: 16px;
         }
 
         nav {
@@ -28,7 +29,7 @@
             color: #ffffff;
             margin: 0 15px;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.2rem;
             transition: color 0.3s ease;
         }
 
@@ -37,7 +38,7 @@
         }
 
         section {
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -58,18 +59,18 @@
 
         .content {
             text-align: center;
-            max-width: 800px;
+            max-width: 90%;
             margin: 0 auto;
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #1e90ff;
         }
 
         p {
-            font-size: 1.5em;
+            font-size: 1.2rem;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -80,7 +81,7 @@
         }
 
         li {
-            font-size: 1.3em;
+            font-size: 1.3rem;
             line-height: 1.6;
             margin-bottom: 20px;
             padding: 15px;
@@ -127,8 +128,8 @@
         
         .automation-link {
             display: block;
-            color: inherit; /* Herda a cor do container */
-            text-decoration: none; /* Remove o sublinhado do link */
+            color: inherit;
+            text-decoration: none;
             height: 100%;
             width: 100%;
             padding: 20px;
@@ -137,7 +138,7 @@
         
         .automation-link h2,
         .automation-link p {
-            margin: 0; /* Remove margens para alinhamento adequado */
+            margin: 0;
         }
         
         .automation-link h2 {
@@ -145,23 +146,7 @@
         }
         
         .automation-link p {
-            font-size: 1.1em;
-            line-height: 1.6;
-        }
-
-
-        .automation-item:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .automation-item h2 {
-            color: #1e90ff;
-            margin-bottom: 15px;
-        }
-
-        .automation-item p {
-            font-size: 1.1em;
+            font-size: 1.1rem;
             line-height: 1.6;
         }
 
@@ -173,7 +158,7 @@
         }
 
         .whatsapp-icon img {
-            width: 80px; /* Ajuste o tamanho do ícone conforme necessário */
+            width: 60px;
             height: auto;
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -182,6 +167,37 @@
 
         .whatsapp-icon:hover img {
             transform: scale(1.1);
+        }
+
+        /* Media Queries para responsividade */
+        @media (max-width: 768px) {
+            nav a {
+                font-size: 1rem;
+                margin: 0 10px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .automation-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-icon img {
+                width: 50px;
+            }
         }
     </style>
 </head>
@@ -238,50 +254,28 @@
 
     <section id="contato" class="section-white">
         <div class="content">
-            <h1>Entre em Contato</h1>
-            <p>Entre em contato conosco para descobrir como nossas soluções podem transformar sua operação. Estamos aqui para entender suas necessidades e oferecer um plano de automação personalizado. Não hesite em nos contatar para mais informações.</p>
-            <p>Email: indev.ribas@gmail.com</p>
-            <p>Telefone: (11) 97789-9166</p>
+            <h1>Contato</h1>
+            <p>Entre em contato conosco para saber mais sobre nossas soluções de automação. Estamos prontos para transformar seus desafios em oportunidades.</p>
+            <p>Telefone: (11) 99999-9999</p>
+            <p>Email: contato@indev.com.br</p>
         </div>
     </section>
 
     <section id="sobre" class="section-black">
         <div class="content">
             <h1>Sobre a InDev</h1>
-            <p>A InDev é uma empresa líder em automação de processos manuais. Nossa missão é ajudar empresas a se adaptarem à nova era digital, eliminando tarefas repetitivas e propensas a erros. Com uma equipe altamente qualificada e soluções inovadoras, estamos comprometidos em entregar excelência e criar valor sustentável para nossos clientes.</p>
+            <p>A InDev é uma empresa especializada em automação de processos manuais. Com anos de experiência no mercado, nosso objetivo é fornecer soluções tecnológicas que façam a diferença no dia a dia das empresas. Nosso time de especialistas está comprometido em entregar soluções que não apenas atendam, mas superem as expectativas dos nossos clientes.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Vitor Silva Ribas de Oliveira</p>
+        <p>&copy; 2024 InDev Automação. Todos os direitos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5511977899166" target="_blank" class="whatsapp-icon">
-        <img src="whats.gif" alt="WhatsApp">
-    </a>
-
-    <script>
-        // Alterna a cor de fundo a cada seção durante o scroll
-        window.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('section');
-            const scrollPosition = window.scrollY + window.innerHeight / 2;
-
-            sections.forEach((section, index) => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-
-                if (scrollPosition > sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    if (index % 2 === 0) {
-                        section.classList.remove('section-black');
-                        section.classList.add('section-white');
-                    } else {
-                        section.classList.remove('section-white');
-                        section.classList.add('section-black');
-                    }
-                }
-            });
-        });
-    </script>
-
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/5511999999999" target="_blank">
+            <img src="whatsapp-icon.png" alt="Ícone do WhatsApp">
+        </a>
+    </div>
 </body>
 </html>
