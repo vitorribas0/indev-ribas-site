@@ -37,13 +37,13 @@
         }
 
         section {
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             transition: background-color 1s ease;
             color: #ffffff;
             padding: 20px;
-            box-sizing: border-box;
         }
 
         .section-white {
@@ -63,13 +63,13 @@
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 3em;
             margin-bottom: 20px;
             color: #1e90ff;
         }
 
         p {
-            font-size: 1.2em;
+            font-size: 1.5em;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -119,12 +119,12 @@
             text-decoration: none;
             overflow: hidden;
         }
-
+        
         .automation-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-
+        
         .automation-link {
             display: block;
             color: inherit; /* Herda a cor do container */
@@ -134,17 +134,33 @@
             padding: 20px;
             box-sizing: border-box;
         }
-
+        
         .automation-link h2,
         .automation-link p {
             margin: 0; /* Remove margens para alinhamento adequado */
         }
-
+        
         .automation-link h2 {
             color: #1e90ff;
         }
-
+        
         .automation-link p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+
+        .automation-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .automation-item h2 {
+            color: #1e90ff;
+            margin-bottom: 15px;
+        }
+
+        .automation-item p {
             font-size: 1.1em;
             line-height: 1.6;
         }
@@ -166,20 +182,6 @@
 
         .whatsapp-icon:hover img {
             transform: scale(1.1);
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            p {
-                font-size: 1em;
-            }
-
-            .automation-item {
-                padding: 15px;
-            }
         }
     </style>
 </head>
@@ -246,19 +248,40 @@
     <section id="sobre" class="section-black">
         <div class="content">
             <h1>Sobre a InDev</h1>
-            <p>A InDev é uma empresa líder em automação de processos manuais. Nossa missão é ajudar empresas a se adaptarem à nova era digital, eliminando tarefas repetitivas e propensas a erros. Com uma equipe altamente qualificada e soluções personalizadas, estamos prontos para enfrentar qualquer desafio de automação.</p>
+            <p>A InDev é uma empresa líder em automação de processos manuais. Nossa missão é ajudar empresas a se adaptarem à nova era digital, eliminando tarefas repetitivas e propensas a erros. Com uma equipe altamente qualificada e soluções inovadoras, estamos comprometidos em entregar excelência e criar valor sustentável para nossos clientes.</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 InDev Automação. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Vitor Silva Ribas de Oliveira</p>
     </footer>
 
-    <div class="whatsapp-icon">
-        <a href="https://wa.me/5511977899166?text=Ol%C3%A1%2C%20eu%20gostaria%20de%20saber%20mais%20sobre%20os%20servi%C3%A7os%20de%20automatiza%C3%A7%C3%A3o" target="_blank">
-            <img src="whatsapp-icon.png" alt="WhatsApp">
-        </a>
-    </div>
+    <a href="https://wa.me/5511977899166" target="_blank" class="whatsapp-icon">
+        <img src="whats.gif" alt="WhatsApp">
+    </a>
+
+    <script>
+        // Alterna a cor de fundo a cada seção durante o scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition > sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    if (index % 2 === 0) {
+                        section.classList.remove('section-black');
+                        section.classList.add('section-white');
+                    } else {
+                        section.classList.remove('section-white');
+                        section.classList.add('section-black');
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
