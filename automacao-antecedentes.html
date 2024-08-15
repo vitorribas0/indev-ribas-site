@@ -45,15 +45,17 @@
             color: #000000;
             text-align: center;
             background-color: #ffffff;
+            flex-wrap: wrap;
         }
 
         .content {
             max-width: 900px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         h1 {
-            font-size: 2.8em;
+            font-size: 2.5em;
             margin-bottom: 20px;
             color: #1e90ff;
         }
@@ -72,9 +74,8 @@
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 20px auto;
-            display: inline-block;
             text-align: left;
-            max-width: 90%;
+            max-width: 100%;
         }
 
         .law-text h2 {
@@ -92,6 +93,7 @@
             text-decoration: none;
             font-size: 1.2em;
             transition: background-color 0.3s ease;
+            margin-top: 20px;
         }
 
         .cta-button:hover {
@@ -103,6 +105,7 @@
             color: #ffffff;
             padding: 20px;
             background-color: #000000;
+            margin-top: 40px;
         }
 
         .whatsapp-icon {
@@ -122,6 +125,49 @@
 
         .whatsapp-icon:hover img {
             transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            p, .law-text {
+                font-size: 1em;
+            }
+
+            .cta-button {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                font-size: 1em;
+                margin: 0 10px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            p, .law-text {
+                font-size: 0.9em;
+            }
+
+            .cta-button {
+                font-size: 0.9em;
+                padding: 8px 15px;
+            }
+
+            .law-text h2 {
+                font-size: 1.3em;
+            }
+
+            .content {
+                padding: 10px;
+            }
         }
     </style>
 </head>
