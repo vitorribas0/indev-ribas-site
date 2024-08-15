@@ -37,6 +37,7 @@
         }
 
         section {
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -63,13 +64,13 @@
         }
 
         h1 {
-            font-size: 2em; /* Ajustado para ser mais responsivo */
+            font-size: 2.5rem;
             margin-bottom: 20px;
             color: #1e90ff;
         }
 
         p {
-            font-size: 1em; /* Ajustado para ser mais responsivo */
+            font-size: 1.2rem;
             line-height: 1.6;
             margin-bottom: 20px;
         }
@@ -80,7 +81,7 @@
         }
 
         li {
-            font-size: 1em; /* Ajustado para ser mais responsivo */
+            font-size: 1.1rem;
             line-height: 1.6;
             margin-bottom: 20px;
             padding: 15px;
@@ -104,7 +105,7 @@
 
         .automation-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 20px;
         }
@@ -119,12 +120,12 @@
             text-decoration: none;
             overflow: hidden;
         }
-
+        
         .automation-item:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-
+        
         .automation-link {
             display: block;
             color: inherit;
@@ -134,18 +135,18 @@
             padding: 20px;
             box-sizing: border-box;
         }
-
+        
         .automation-link h2,
         .automation-link p {
             margin: 0;
         }
-
+        
         .automation-link h2 {
             color: #1e90ff;
         }
-
+        
         .automation-link p {
-            font-size: 1em;
+            font-size: 1rem;
             line-height: 1.6;
         }
 
@@ -157,7 +158,7 @@
         }
 
         .whatsapp-icon img {
-            width: 50px; /* Ajuste o tamanho do ícone conforme necessário */
+            width: 60px;
             height: auto;
             border-radius: 50%;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -169,40 +170,40 @@
         }
 
         @media (max-width: 768px) {
-            nav a {
-                font-size: 1em;
-                margin: 0 10px;
-            }
-
             h1 {
-                font-size: 1.5em;
+                font-size: 2rem;
             }
 
             p {
-                font-size: 0.9em;
+                font-size: 1rem;
             }
 
-            .automation-item {
-                padding: 15px;
+            nav a {
+                font-size: 1rem;
+                margin: 0 10px;
+            }
+
+            .whatsapp-icon img {
+                width: 50px;
             }
         }
 
         @media (max-width: 480px) {
-            nav a {
-                display: block;
-                margin: 10px 0;
-            }
-
             h1 {
-                font-size: 1.2em;
+                font-size: 1.5rem;
             }
 
             p {
-                font-size: 0.8em;
+                font-size: 0.9rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+                margin: 0 5px;
             }
 
             .whatsapp-icon img {
-                width: 40px; /* Ajuste o tamanho do ícone conforme necessário */
+                width: 40px;
             }
         }
     </style>
@@ -245,7 +246,7 @@
                         <h2>Automação de Consulta de Antecedentes Criminais</h2>
                         <p>Facilitamos a consulta e a análise de antecedentes criminais de forma automatizada. Nossa solução integra com bases de dados relevantes e realiza consultas de forma ágil, proporcionando uma análise detalhada e confiável.</p>
                     </a>
-                </div>
+                </div>               
                 <div class="automation-item">
                     <h2>Automação de Processos Operacionais</h2>
                     <p>Transformamos processos operacionais manuais em fluxos de trabalho automatizados. Desde a coordenação de tarefas até a gestão de recursos, nossas soluções garantem um funcionamento mais fluido e sem interrupções.</p>
@@ -270,7 +271,7 @@
     <section id="sobre" class="section-black">
         <div class="content">
             <h1>Sobre a InDev</h1>
-            <p>A InDev é uma empresa inovadora no setor de automação, dedicada a oferecer soluções que otimizam processos e melhoram a eficiência operacional. Nossa equipe de especialistas está comprometida em entregar soluções de alta qualidade e atender às necessidades específicas de cada cliente.</p>
+            <p>A InDev é uma empresa dedicada à automação de processos manuais. Com uma equipe experiente e apaixonada por tecnologia, estamos sempre prontos para enfrentar novos desafios e entregar soluções que fazem a diferença. Nosso objetivo é tornar o seu trabalho mais eficiente, reduzindo a carga de tarefas repetitivas e permitindo que você se concentre no que realmente importa.</p>
         </div>
     </section>
 
@@ -279,10 +280,32 @@
     </footer>
 
     <div class="whatsapp-icon">
-        <a href="https://api.whatsapp.com/send?phone=5511977899166&text=Olá,%20eu%20gostaria%20de%20saber%20mais%20sobre%20os%20serviços%20de%20automação" target="_blank">
-            <img src="whatsapp-icon.png" alt="WhatsApp">
+        <a href="https://api.whatsapp.com/send?phone=5511977899166&text=Olá, eu gostaria de saber mais sobre os serviços de automação" target="_blank">
+            <img src="whatsapp.png" alt="WhatsApp">
         </a>
     </div>
+    <script>
+        // Alterna a cor de fundo a cada seção durante o scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (scrollPosition > sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    if (index % 2 === 0) {
+                        section.classList.remove('section-black');
+                        section.classList.add('section-white');
+                    } else {
+                        section.classList.remove('section-white');
+                        section.classList.add('section-black');
+                    }
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
